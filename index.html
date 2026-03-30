@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Myriad Media - Spotify Subscriptions in Tanzania</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="logo"><span class="accent">Myriad</span> Media</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>Your Music. <span class="accent">Your Way.</span></h1>
+    <p>Premium Spotify subscriptions for just 5,000 TSh. Stream unlimited music across Tanzania.</p>
+    <div class="btn-group">
+      <button class="btn btn-primary" onclick="openModal()">Get Started</button>
+      <a href="pricing.html" class="btn btn-outline">View Plans</a>
+    </div>
+  </section>
+
+  <section class="how-it-works">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Sign Up</h3>
+        <p>Fill out our simple form and choose your plan</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Pay</h3>
+        <p>Send payment via M-Pesa to 5,000 TSh</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Enjoy</h3>
+        <p>Get your Spotify credentials and start streaming</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <p>"Best Spotify deal in Tanzania! Smooth streaming and great service."</p>
+        <span class="accent">- Amina, Dar es Salaam</span>
+      </div>
+      <div class="testimonial">
+        <p>"Finally, affordable premium music. Highly recommend Myriad Media!"</p>
+        <span class="accent">- Juma, Arusha</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Myriad Media. All rights reserved.</p>
+  </footer>
+
+  <div id="modal" class="modal">
+    <div class="modal-backdrop" onclick="closeModal()"></div>
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <h2>Get <span class="accent">Started</span></h2>
+      <p>Fill out the form and we'll contact you on WhatsApp</p>
+      <form id="leadForm">
+        <label>Name *</label>
+        <input type="text" name="name" required>
+        <label>City *</label>
+        <input type="text" name="city" required>
+        <label>Phone *</label>
+        <input type="tel" name="phone" required>
+        <label>How did you hear about us? *</label>
+        <input type="text" name="source" required>
+        <label>Referral Code (optional)</label>
+        <input type="text" name="referral">
+        <button type="submit" class="btn btn-primary">Continue on WhatsApp</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

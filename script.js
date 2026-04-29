@@ -34,6 +34,44 @@ if (leadForm) {
 
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
+  const emailInput = contactForm.querySelector('input[name="email"]');
+  const nameInput = contactForm.querySelector('input[name="name"]');
+  const messageInput = contactForm.querySelector('textarea[name="message"]');
+
+  function validateEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  [nameInput, messageInput].forEach(input => {
+    if (input) {
+      input.addEventListener('focus', () => input.classList.add('focused'));
+      input.addEventListener('blur', () => input.classList.remove('focused'));
+    }
+  });
+
+  if (emailInput) {
+    emailInput.addEventListener('focus', () => {
+      emailInput.classList.remove('error', 'valid');
+      emailInput.classList.add('focused');
+    });
+    emailInput.addEventListener('blur', () => {
+      emailInput.classList.remove('focused');
+      if (emailInput.value && !validateEmail(emailInput.value)) {
+        emailInput.classList.add('error');
+      } else if (emailInput.value) {
+        emailInput.classList.add('valid');
+      }
+    });
+    emailInput.addEventListener('input', () => {
+      emailInput.classList.remove('error', 'valid', 'focused');
+      if (emailInput.value && validateEmail(emailInput.value)) {
+        emailInput.classList.add('valid');
+      } else if (emailInput.value) {
+        emailInput.classList.add('error');
+      }
+    });
+  }
+
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const form = e.target;
